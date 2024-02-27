@@ -26,6 +26,8 @@
 		44CEEB842B8E35AB008E875D /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEEB832B8E35AB008E875D /* LaunchCoordinator.swift */; };
 		44CEEB882B8E3BE8008E875D /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEEB872B8E3BE8008E875D /* AuthenticationCoordinator.swift */; };
 		44CEEB8A2B8E4172008E875D /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEEB892B8E4172008E875D /* LaunchScreenViewModel.swift */; };
+		44CEEB8C2B8E4DDE008E875D /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEEB8B2B8E4DDE008E875D /* AuthenticationModel.swift */; };
+		44CEEB8E2B8E5032008E875D /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEEB8D2B8E5032008E875D /* AuthenticationViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		44CEEB832B8E35AB008E875D /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
 		44CEEB872B8E3BE8008E875D /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		44CEEB892B8E4172008E875D /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
+		44CEEB8B2B8E4DDE008E875D /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		44CEEB8D2B8E5032008E875D /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		440EE8CE2B8CE6B900D56318 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44CEEB8B2B8E4DDE008E875D /* AuthenticationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 		44CEE16F2B8CF0D4008E875D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				44CEEB8D2B8E5032008E875D /* AuthenticationViewModelTests.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 					};
 					440EE8AA2B8CE30F00D56318 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = 440EE8942B8CE30E00D56318;
 					};
 					440EE8B42B8CE30F00D56318 = {
@@ -440,6 +447,7 @@
 				440EE8CD2B8CE5D200D56318 /* AuthenticationViewModel.swift in Sources */,
 				44CEEB812B8E31AC008E875D /* Coordinator.swift in Sources */,
 				440EE8992B8CE30E00D56318 /* AppDelegate.swift in Sources */,
+				44CEEB8C2B8E4DDE008E875D /* AuthenticationModel.swift in Sources */,
 				44CEEB882B8E3BE8008E875D /* AuthenticationCoordinator.swift in Sources */,
 				44CEE1762B8CF8A4008E875D /* UIView+Ext.swift in Sources */,
 				440EE8CB2B8CE5C600D56318 /* AuthenticationViewController.swift in Sources */,
@@ -457,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CEEB8E2B8E5032008E875D /* AuthenticationViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +699,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BPXP6739DN;
@@ -699,6 +709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mitrio.petProjects.CloudFileStorageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudFileStorage.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CloudFileStorage";
@@ -710,6 +721,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BPXP6739DN;
