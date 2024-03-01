@@ -29,7 +29,6 @@ extension AppCoordinator: LaunchFlowDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.navigationController = UINavigationController()
             self.window?.rootViewController = self.navigationController
-            self.startAuthentication()
             
             UIView.transition(
                 with: self.window!,
@@ -39,6 +38,7 @@ extension AppCoordinator: LaunchFlowDelegate {
                 completion: nil
             )
             self.childCoordinators.removeAll()
+            self.startAuthentication()
         }
     }
 }

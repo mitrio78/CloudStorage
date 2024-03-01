@@ -13,6 +13,9 @@
 		440EE8A52B8CE30F00D56318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440EE8A32B8CE30F00D56318 /* LaunchScreen.storyboard */; };
 		440EE8CB2B8CE5C600D56318 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EE8CA2B8CE5C600D56318 /* AuthenticationViewController.swift */; };
 		440EE8CD2B8CE5D200D56318 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EE8CC2B8CE5D200D56318 /* AuthenticationViewModel.swift */; };
+		44CE03E12B8F7A55008E875D /* YandexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE03E02B8F7A55008E875D /* YandexLoginViewController.swift */; };
+		44CE03E32B8F7A63008E875D /* YandexLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE03E22B8F7A63008E875D /* YandexLoginViewModel.swift */; };
+		44CE03E82B8F7AB4008E875D /* YandexLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE03E72B8F7AB4008E875D /* YandexLoginCoordinator.swift */; };
 		44CEE1722B8CF216008E875D /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEE1712B8CF216008E875D /* ViewConfigurable.swift */; };
 		44CEE1762B8CF8A4008E875D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEE1752B8CF8A4008E875D /* UIView+Ext.swift */; };
 		44CEE17D2B8CFA79008E875D /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEE17C2B8CFA79008E875D /* Images.swift */; };
@@ -57,6 +60,9 @@
 		440EE8B52B8CE30F00D56318 /* CloudFileStorageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudFileStorageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		440EE8CA2B8CE5C600D56318 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		440EE8CC2B8CE5D200D56318 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		44CE03E02B8F7A55008E875D /* YandexLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewController.swift; sourceTree = "<group>"; };
+		44CE03E22B8F7A63008E875D /* YandexLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewModel.swift; sourceTree = "<group>"; };
+		44CE03E72B8F7AB4008E875D /* YandexLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginCoordinator.swift; sourceTree = "<group>"; };
 		44CEE16C2B8CF04B008E875D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44CEE1712B8CF216008E875D /* ViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		44CEE1752B8CF8A4008E875D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -212,6 +218,33 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		44CE03DF2B8F7A31008E875D /* YandexLogin */ = {
+			isa = PBXGroup;
+			children = (
+				44CE03E02B8F7A55008E875D /* YandexLoginViewController.swift */,
+				44CE03E22B8F7A63008E875D /* YandexLoginViewModel.swift */,
+			);
+			path = YandexLogin;
+			sourceTree = "<group>";
+		};
+		44CE03E42B8F7A73008E875D /* AuthFlow */ = {
+			isa = PBXGroup;
+			children = (
+				44CEEB872B8E3BE8008E875D /* AuthenticationCoordinator.swift */,
+				44CE03E72B8F7AB4008E875D /* YandexLoginCoordinator.swift */,
+			);
+			path = AuthFlow;
+			sourceTree = "<group>";
+		};
+		44CE03E52B8F7A82008E875D /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				44CE03E42B8F7A73008E875D /* AuthFlow */,
+				44CEEB822B8E3595008E875D /* Launch */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		44CEE16F2B8CF0D4008E875D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +300,7 @@
 			children = (
 				44CEEB792B8E314F008E875D /* Launch */,
 				440EE8C92B8CE4E200D56318 /* Authentication */,
+				44CE03DF2B8F7A31008E875D /* YandexLogin */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -285,7 +319,7 @@
 			children = (
 				44CEEB7F2B8E3199008E875D /* Protocols */,
 				44CEEB7D2B8E3189008E875D /* AppCoordinator.swift */,
-				44CEEB822B8E3595008E875D /* Launch */,
+				44CE03E52B8F7A82008E875D /* Flow */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -302,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				44CEEB832B8E35AB008E875D /* LaunchCoordinator.swift */,
-				44CEEB872B8E3BE8008E875D /* AuthenticationCoordinator.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -447,6 +480,7 @@
 				440EE8CD2B8CE5D200D56318 /* AuthenticationViewModel.swift in Sources */,
 				44CEEB812B8E31AC008E875D /* Coordinator.swift in Sources */,
 				440EE8992B8CE30E00D56318 /* AppDelegate.swift in Sources */,
+				44CE03E82B8F7AB4008E875D /* YandexLoginCoordinator.swift in Sources */,
 				44CEEB8C2B8E4DDE008E875D /* AuthenticationModel.swift in Sources */,
 				44CEEB882B8E3BE8008E875D /* AuthenticationCoordinator.swift in Sources */,
 				44CEE1762B8CF8A4008E875D /* UIView+Ext.swift in Sources */,
@@ -454,10 +488,12 @@
 				44CEEB8A2B8E4172008E875D /* LaunchScreenViewModel.swift in Sources */,
 				44CEE17D2B8CFA79008E875D /* Images.swift in Sources */,
 				44CEE1722B8CF216008E875D /* ViewConfigurable.swift in Sources */,
+				44CE03E12B8F7A55008E875D /* YandexLoginViewController.swift in Sources */,
 				44CEE1872B8D07AC008E875D /* CommonBottomButton.swift in Sources */,
 				44CEEB7B2B8E316D008E875D /* LaunchScreenAnimationViewController.swift in Sources */,
 				44CEE17F2B8CFA82008E875D /* Fonts.swift in Sources */,
 				440EE89B2B8CE30E00D56318 /* SceneDelegate.swift in Sources */,
+				44CE03E32B8F7A63008E875D /* YandexLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

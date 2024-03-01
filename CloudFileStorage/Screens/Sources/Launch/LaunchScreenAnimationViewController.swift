@@ -87,5 +87,8 @@ fileprivate extension UIView {
                 })
             }
         }
+        UIView.animate(withDuration: 1.2) {
+            self.transform = CGAffineTransform(rotationAngle: 3.14)
+        }
     }
 }

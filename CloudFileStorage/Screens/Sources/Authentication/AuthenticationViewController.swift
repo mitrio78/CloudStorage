@@ -7,10 +7,8 @@
 
 import UIKit
 
-// MARK: - Protocols
-
-public protocol AuthenticationPresentationLogic {
-    
+protocol AuthenticationCoordinationDelegate: Coordinator {
+    func launchYandexLoginScreen()
 }
 
 // MARK: - AuthenticationViewController
@@ -20,6 +18,7 @@ final class AuthenticationViewController: UIViewController {
     // MARK: - Properties
     
     let viewModel: AuthenticationLogic
+    var coordinationDelegate: AuthenticationCoordinationDelegate?
     
     // MARK: - UI
     
@@ -52,8 +51,9 @@ final class AuthenticationViewController: UIViewController {
     
     // MARK: - Init
     
-    init(viewModel: AuthenticationLogic) {
+    init(viewModel: AuthenticationLogic, coordinationDelegate: AuthenticationCoordinationDelegate) {
         self.viewModel = viewModel
+        self.coordinationDelegate = coordinationDelegate
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,12 +70,6 @@ final class AuthenticationViewController: UIViewController {
     }
 }
 
-// MARK: - AuthenticationViewLogic
-
-extension AuthenticationViewController: AuthenticationPresentationLogic {
-    
-}
-
 // MARK: - ViewConfigurable
 
 extension AuthenticationViewController: ViewConfigurable {
@@ -85,6 +79,7 @@ extension AuthenticationViewController: ViewConfigurable {
         logoStack.addArrangedSubview(nameLabel)
         view.addSubview(logoStack)
         view.addSubview(bottomButton)
+        setButtonAction()
     }
     
     func setupConstraints() {
@@ -96,6 +91,15 @@ extension AuthenticationViewController: ViewConfigurable {
             height: 50
         )
         bottomButton.centerXInView(view)
+    }
+    
+    func setButtonAction() {
+        bottomButton.addTarget(self, action: #selector(openLogin), for: .touchUpInside)
+    }
+    
+    @objc
+    func openLogin() {
+        coordinationDelegate?.launchYandexLoginScreen()
     }
 }
 
